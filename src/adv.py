@@ -1,3 +1,6 @@
+import time
+import random
+
 from room import Room
 from player import Player
 
@@ -63,10 +66,17 @@ room['stormsend'].s_to = room['kings_landing']
 hello = f"\n==========================================================\n 🌏   Hello and welcome to TRAVEL AROUND WESTEROS\n==========================================================\n"
 goodbye = f"\n==========================================================\n                   THANK YU FOR PLAYING!\n==========================================================\n"
 where_to_go = f"❔   Would you like to stay or go somewhere else? Use n/s/w/e for navigation: "
-walking = "walking ..."
 
 
-# Game logic
+def walking_function(n):
+
+    for n in range(0, n):
+        print("walking...")
+        time.sleep(0.8)
+    print("almost there...")
+    time.sleep(1)
+
+    # Game logic
 directions = ''
 
 print(f"{hello}")
@@ -79,9 +89,9 @@ while directions != 'q':
         if directions == "n":
             if player.current_room.s_to:
                 player.current_room = player.current_room.s_to
-                print(f"{walking}")
+                walking_function(random.randint(1, 5))
                 print(
-                    f"You have decided to go north and you moved to {player.current_room.name.upper()} {player.current_room.emoji}")
+                    f"You have decided to go north and you arrived to {player.current_room.name.upper()} {player.current_room.emoji}")
                 print(f"{player.current_room.describtion}")
             else:
                 print(
@@ -89,9 +99,9 @@ while directions != 'q':
         elif directions == "s":
             if player.current_room.n_to:
                 player.current_room = player.current_room.n_to
-                print(f"{walking}")
+                walking_function(random.randint(1, 5))
                 print(
-                    f"You have decided to go south and you moved to {player.current_room.name.upper()} {player.current_room.emoji}")
+                    f"You have decided to go south and you arrived to {player.current_room.name.upper()} {player.current_room.emoji}")
                 print(f"{player.current_room.describtion}")
             else:
                 print(
@@ -99,9 +109,9 @@ while directions != 'q':
         elif directions == "e":
             if player.current_room.w_to:
                 player.current_room = player.current_room.w_to
-                print(f"{walking}")
+                walking_function(random.randint(1, 5))
                 print(
-                    f"You have decided to go east and you moved to {player.current_room.name.upper()} {player.current_room.emoji}")
+                    f"You have decided to go east and you arrived to {player.current_room.name.upper()} {player.current_room.emoji}")
                 print(f"{player.current_room.describtion}")
             else:
                 print(
@@ -109,9 +119,9 @@ while directions != 'q':
         elif directions == "w":
             if player.current_room.e_to:
                 player.current_room = player.current_room.e_to
-                print(f"{walking}")
+                walking_function(random.randint(1, 5))
                 print(
-                    f"You have decided to go east and you moved to {player.current_room.name.upper()}")
+                    f"You have decided to go east and you arrived to {player.current_room.name.upper()}")
                 print(f"{player.current_room.describtion}")
             else:
                 print(
