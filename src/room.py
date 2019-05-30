@@ -3,7 +3,7 @@
 
 
 class Room:
-    def __init__(self, name, describtion, emoji):
+    def __init__(self, name, describtion, emoji, items):
         self.name = name
         self.describtion = describtion
         self.emoji = emoji
@@ -11,6 +11,7 @@ class Room:
         self.s_to = None
         self.e_to = None
         self.w_to = None
+        self.items = items
 
     def __str__(self):
         return f"{self.name} - {self.describtion}"
@@ -18,23 +19,23 @@ class Room:
 
 # All the rooms
 room = {
-    'winterfell':   Room("Winterfell", "Winterfell is the seat and the ancestral home of the royal House Stark. It is a very large castle located at the center of the North, from where the head of House Stark rules over his or her people.", "🐺"),
+    'winterfell':   Room("Winterfell", "Winterfell is the seat and the ancestral home of the royal House Stark. It is a very large castle located at the center of the North, from where the head of House Stark rules over his or her people.", "🐺", ["wolf, snow"]),
 
-    'riverrun':    Room("Riverrun", "Riverrun is the seat of House Tully, which was once occupied by House Frey. It is a large castle located in the central-western part of the Riverlands.", "⛲️"),
+    'riverrun':    Room("Riverrun", "Riverrun is the seat of House Tully, which was once occupied by House Frey. It is a large castle located in the central-western part of the Riverlands.", "⛲️", ["ship, book"]),
 
-    'kings_landing': Room("Kings Landing", "King's Landing is the capital, and largest city, of the Seven Kingdoms. It enjoys a warm climate and life there is luxurious for those that can afford it.", "👑"),
+    'kings_landing': Room("Kings Landing", "King's Landing is the capital, and largest city, of the Seven Kingdoms. It enjoys a warm climate and life there is luxurious for those that can afford it.", "👑", ["money, gold"]),
 
-    'eyrie':   Room("Eyrie", "The Eyrie is the principal stronghold of House Arryn. It is located in the Vale of Arryn near the east coast of Westeros. ", "🗻"),
+    'eyrie':   Room("Eyrie", "The Eyrie is the principal stronghold of House Arryn. It is located in the Vale of Arryn near the east coast of Westeros. ", "🗻", ["boat, sword"]),
 
-    'casterly_rock': Room("Casterly Rock", "Casterly Rock is the ancestral stronghold of House Lannister. It is located on the Western coast of Westeros on a rocky promontory overlooking the Sunset Sea.", "👫"),
+    'casterly_rock': Room("Casterly Rock", "Casterly Rock is the ancestral stronghold of House Lannister. It is located on the Western coast of Westeros on a rocky promontory overlooking the Sunset Sea.", "👫", ["sunglasses, gold"]),
 
-    'pyke': Room("Pyke", "Pyke is the stronghold and seat of House Greyjoy, located on the island of the same name, which is one of the seven major Iron Islands. ", "⚓️"),
+    'pyke': Room("Pyke", "Pyke is the stronghold and seat of House Greyjoy, located on the island of the same name, which is one of the seven major Iron Islands. ", "⚓️", ["boat, ship"]),
 
-    'highgarden': Room("Highgarden", "Highgarden was the seat of House Tyrell and is the regional capital of the Reach. Located on the banks of the river Mander, Highgarden sits astride the Roseroad, a major thoroughfare linking Oldtown and King's Landing.", "🏆"),
+    'highgarden': Room("Highgarden", "Highgarden was the seat of House Tyrell and is the regional capital of the Reach. Located on the banks of the river Mander, Highgarden sits astride the Roseroad, a major thoroughfare linking Oldtown and King's Landing.", "🏆", ["money, sword"]),
 
-    'stormsend': Room("Storm's End", "Storm's End is the ancestral seat of House Baratheon. Lord Gendry Baratheon is the Lord of Storm's End. Storm's End is a formidable fortress, located on the southeastern coast of Westeros overlooking Shipbreaker Bay.", " 🌊"),
+    'stormsend': Room("Storm's End", "Storm's End is the ancestral seat of House Baratheon. Lord Gendry Baratheon is the Lord of Storm's End. Storm's End is a formidable fortress, located on the southeastern coast of Westeros overlooking Shipbreaker Bay.", " 🌊", ["spear, ship"]),
 
-    'sunspear': Room("Sunspear", "Sunspear is the capital of Dorne Dorne, southernmost of the Seven Kingdoms, located in the far southeast of the continent on the Summer Sea.", "☀️")
+    'sunspear': Room("Sunspear", "Sunspear is the capital of Dorne Dorne, southernmost of the Seven Kingdoms, located in the far southeast of the continent on the Summer Sea.", "☀️", ["boat, sword"])
 }
 
 # Link rooms together
